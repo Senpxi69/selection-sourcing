@@ -204,7 +204,7 @@ input, select, textarea, button { font-family: inherit; }
 /* Nav */
 .nav__list {
   display: flex;
-  gap: 2rem;
+  gap: 1.6rem;
   align-items: center;
 }
 .nav__link {
@@ -1078,6 +1078,10 @@ input, select, textarea, button { font-family: inherit; }
    RESPONSIVE
 ══════════════════════════════════════════ */
 @media (max-width: 1024px) {
+  /* keep the 6-item nav fitting between 769–1024px before the mobile quicknav kicks in */
+  .nav__list { gap: 1.05rem; }
+  .nav__link { font-size: .82rem; }
+  .header__inner { gap: 1rem; }
   .hero__inner { grid-template-columns: 1fr; }
   .hero__visual { display: none; }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
