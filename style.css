@@ -1168,6 +1168,10 @@ input, select, textarea, button { font-family: inherit; }
   opacity: 1;
   transform: translateY(0);
 }
+/* Respect reduced-motion: show everything immediately, no scroll reveal */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1; transform: none; transition: none; }
+}
 
 /* ── Page-load intro: first screen eases in gently (CSS-only, no flash) ── */
 @keyframes intro-up {

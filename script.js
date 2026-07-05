@@ -143,9 +143,12 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-/* ── Fade-up on scroll ── */
+/* ── Fade-up on scroll (works on mobile too via IntersectionObserver) ── */
 const fadeEls = document.querySelectorAll(
-  '.service-card, .step, .job-card, .testimonial, .about__metric, .stat, .feature-icon'
+  '.section__header, .service-card, .svc-card, .info-card, .step, .job-card, ' +
+  '.testimonial, .about__metric, .stat, .feature-icon, .pillar, .trust__item, ' +
+  '.audience-card, .gallery__tile, .founder, .life__col, .why-list li, ' +
+  '.about-story__lead, .about-story__belief, .industries, .next-step, .prose'
 );
 fadeEls.forEach(el => el.classList.add('fade-up'));
 
