@@ -49,7 +49,7 @@
     "@type": "ContactPage",
     "name": "Contact Selections Sourcing",
     "url": "https://www.selectionssourcing.com/contact.html",
-    "description": "Contact details and enquiry form for Selections Sourcing.",
+    "description": "Contact details and inquiry form for Selections Sourcing.",
     "mainEntity": {
       "@type": "EmploymentAgency",
       "name": "Selections Sourcing",
@@ -136,6 +136,7 @@
     <div class="page-hero__bg"></div>
     <div class="page-hero__glow"></div>
     <div class="container page-hero__inner">
+      <span class="hero__rule" aria-hidden="true"></span>
       <p class="page-hero__eyebrow">Contact Us</p>
       <h1 class="page-hero__title">Let's Start The <span class="highlight">Right Conversation.</span></h1>
       <p class="page-hero__desc">
@@ -180,29 +181,29 @@
     <div class="container" style="max-width: 760px;">
       <div class="form-card">
         <h3>Send Us A Message</h3>
-        <p class="form-card__sub">Whether it's a hiring requirement, a career enquiry, or simply a question about our services, our team is ready to assist you.</p>
+        <p class="form-card__sub">Whether it's a hiring requirement, a career inquiry, or simply a question about our services, our team is ready to assist you.</p>
         <form onsubmit="handleSubmit(event)">
           <div class="field-grid">
             <div class="field">
-              <label>Full Name <span class="req">*</span></label>
-              <input type="text" placeholder="e.g. Rohan Mehta" required />
+              <label for="contact-name">Full Name <span class="req">*</span></label>
+              <input id="contact-name" name="name" type="text" placeholder="e.g. Rohan Mehta" required />
             </div>
             <div class="field">
-              <label>Email Address <span class="req">*</span></label>
-              <input type="email" placeholder="you@email.com" required />
+              <label for="contact-email">Email Address <span class="req">*</span></label>
+              <input id="contact-email" name="email" type="email" placeholder="you@email.com" required />
             </div>
           </div>
           <div class="field">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="+91 ..." />
+            <label for="contact-phone">Phone Number</label>
+            <input id="contact-phone" name="phone" type="tel" placeholder="+91 ..." />
           </div>
           <div class="field">
-            <label>Subject</label>
-            <input type="text" placeholder="How can we help?" />
+            <label for="contact-subject">Subject</label>
+            <input id="contact-subject" name="subject" type="text" placeholder="How can we help?" />
           </div>
           <div class="field">
-            <label>Message <span class="req">*</span></label>
-            <textarea placeholder="Tell us a little about what you need…" required></textarea>
+            <label for="contact-message">Message <span class="req">*</span></label>
+            <textarea id="contact-message" name="message" placeholder="Tell us a little about what you need…" required></textarea>
           </div>
           <button type="submit" class="btn btn--teal btn--lg btn--full">
             Send Message <i class="fa-solid fa-paper-plane"></i>

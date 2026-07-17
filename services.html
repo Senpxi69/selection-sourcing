@@ -88,25 +88,26 @@
       padding-bottom: 80px;
       text-align: center;
       overflow: hidden;
-      background: var(--bg-2);
-      border-bottom: 1px solid rgba(0,0,0,.08);
+      background:
+        radial-gradient(ellipse 75% 65% at 50% 25%, rgba(176,141,87,.07), transparent 70%),
+        var(--paper);
+      border-bottom: 1px solid var(--border);
     }
     .page-hero__bg {
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(0,128,128,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,128,128,.05) 1px, transparent 1px);
-      background-size: 48px 48px;
+      background-image: radial-gradient(rgba(176,141,87,.34) 1.7px, transparent 1.9px);
+      background-size: 34px 34px;
+      -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 40%, #000 25%, transparent 88%);
+      mask-image: radial-gradient(ellipse 90% 85% at 50% 40%, #000 25%, transparent 88%);
     }
     .page-hero__glow {
       position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 400px;
-      background: radial-gradient(ellipse, rgba(0,128,128,.18) 0%, transparent 70%);
+      inset: 0;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 20%, transparent 46%);
+      mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.55) 20%, transparent 46%);
       pointer-events: none;
     }
     .page-hero__inner {
@@ -319,6 +320,7 @@
     <div class="page-hero__bg"></div>
     <div class="page-hero__glow"></div>
     <div class="container page-hero__inner">
+      <span class="hero__rule" aria-hidden="true"></span>
       <p class="page-hero__eyebrow">What We Offer</p>
       <h1 class="page-hero__title">Our <span class="highlight">Services</span></h1>
       <p class="page-hero__desc">
@@ -355,7 +357,7 @@
             <ul>
               <li><i class="fa-solid fa-check"></i> Dedicated IT &amp; Non-IT teams</li>
               <li><i class="fa-solid fa-check"></i> Multi-channel talent sourcing</li>
-              <li><i class="fa-solid fa-check"></i> Skill, behavioural &amp; cultural-fit screening</li>
+              <li><i class="fa-solid fa-check"></i> Skill, behavioral &amp; cultural-fit screening</li>
               <li><i class="fa-solid fa-check"></i> Replacement guarantee</li>
             </ul>
             <a href="contact.html" class="link-arrow">Get started <i class="fa-solid fa-arrow-right"></i></a>
@@ -407,7 +409,7 @@
             <ul>
               <li><i class="fa-solid fa-check"></i> Psychometric testing</li>
               <li><i class="fa-solid fa-check"></i> Language &amp; aptitude assessment</li>
-              <li><i class="fa-solid fa-check"></i> Behavioural evaluation</li>
+              <li><i class="fa-solid fa-check"></i> Behavioral evaluation</li>
               <li><i class="fa-solid fa-check"></i> Competency mapping</li>
             </ul>
             <a href="contact.html" class="link-arrow">Get started <i class="fa-solid fa-arrow-right"></i></a>
