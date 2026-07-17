@@ -1792,41 +1792,53 @@ input, select, textarea, button { font-family: inherit; }
 .marquee__track {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
 }
 .marquee:hover .marquee__track { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(-50%); } }
+/* Each card owns its trailing gap (via margin) so the two duplicated sets are
+   perfectly symmetric — translateX(-50%) then loops with no seam/jerk. */
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
 
 .client-logo {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .55rem;
   height: 84px;
-  min-width: 210px;
-  padding: 0 1.75rem;
+  min-width: 200px;
+  margin-right: 1.25rem;   /* replaces the track gap — keeps both sets symmetric for a seamless loop */
+  padding: 0 2rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: .01em;
-  color: var(--gray-1);
-  opacity: .82;
-  transition: var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
-.client-logo i { color: var(--teal); font-size: 1.15rem; }
+.client-logo img {
+  max-height: 34px;
+  max-width: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: .68;
+  transition: filter var(--transition), opacity var(--transition);
+}
 .client-logo:hover {
-  opacity: 1;
-  color: var(--teal-dark);
   border-color: rgba(0,128,128,.4);
   box-shadow: 0 10px 30px rgba(22,32,31,.12);
   transform: translateY(-4px);
 }
+.client-logo:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+/* white/knockout logos: invert to dark so they show on the light card */
+.client-logo--invert img { filter: invert(1) grayscale(1); opacity: .72; }
+.client-logo--invert:hover img { filter: invert(1) grayscale(1); opacity: 1; }
 
 /* ══════════════════════════════════════════════════
    SCROLL PROGRESS BAR + BACK TO TOP  (injected by JS)
