@@ -1463,6 +1463,7 @@ input, select, textarea, button { font-family: inherit; }
 .form-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
+  border-top: 3px solid var(--teal);
   border-radius: var(--radius-lg);
   padding: clamp(1.75rem, 4vw, 2.75rem);
   box-shadow: var(--shadow-card);
@@ -1515,6 +1516,50 @@ input, select, textarea, button { font-family: inherit; }
   gap: 1.1rem;
 }
 
+/* ── Premium form polish: icon-wrapped fields, focus glow, custom selects ── */
+.input-wrap { position: relative; }
+.input-wrap > i {
+  position: absolute;
+  left: .95rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: .95rem;
+  color: var(--gray-3);
+  transition: color var(--transition);
+  pointer-events: none;
+}
+.input-wrap--textarea > i { top: 1rem; transform: none; }
+.input-wrap input,
+.input-wrap select,
+.input-wrap textarea { padding-left: 2.6rem; }
+.input-wrap:focus-within > i { color: var(--teal); }
+
+/* soft teal focus glow + label reacts (both form systems) */
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(0,128,128,.12);
+}
+.field:focus-within > label { color: var(--teal); }
+
+/* custom dropdown chevron — removes the generic native arrow */
+.field select,
+.contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23008080' stroke-width='1.6'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .95rem center;
+  background-size: .85rem;
+  padding-right: 2.5rem;
+}
+
 /* File upload */
 .file-drop {
   position: relative;
@@ -1524,10 +1569,16 @@ input, select, textarea, button { font-family: inherit; }
   padding: 1.75rem;
   text-align: center;
   cursor: pointer;
-  transition: border-color var(--transition), background var(--transition);
+  transition: border-color var(--transition), background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
-.file-drop:hover { border-color: var(--teal); }
-.file-drop i { font-size: 1.6rem; color: var(--teal); margin-bottom: .5rem; }
+.file-drop:hover {
+  border-color: var(--teal);
+  background: rgba(0,128,128,.06);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,128,128,.10);
+}
+.file-drop i { font-size: 1.6rem; color: var(--teal); margin-bottom: .5rem; transition: transform var(--transition); }
+.file-drop:hover i { transform: translateY(-2px); }
 .file-drop p { font-size: .9rem; color: var(--gray-1); font-weight: 500; }
 .file-drop span { font-size: .8rem; color: var(--gray-3); }
 .file-drop input[type="file"] {
@@ -2047,6 +2098,7 @@ input, select, textarea, button { font-family: inherit; }
 .gallery__tile { border-radius: var(--radius-lg); overflow: hidden; }
 .gallery__tile--wide { grid-column: span 2; }
 .gallery__tile .photo-ph { border-radius: 0; min-height: 0; }
+.life__culture + .gallery { margin-top: 3.5rem; }  /* breathing room between culture lists and photos */
 
 /* Life at Selections — culture columns */
 .life__culture {

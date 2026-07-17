@@ -193,22 +193,34 @@
           <div class="field-grid">
             <div class="field">
               <label for="cv-name">Full Name <span class="req">*</span></label>
-              <input id="cv-name" type="text" name="name" placeholder="e.g. Ananya Sharma" required />
+              <div class="input-wrap">
+                <i class="fa-solid fa-user" aria-hidden="true"></i>
+                <input id="cv-name" type="text" name="name" placeholder="e.g. Ananya Sharma" required />
+              </div>
             </div>
             <div class="field">
               <label for="cv-email">Email Address <span class="req">*</span></label>
-              <input id="cv-email" type="email" name="email" placeholder="you@email.com" required />
+              <div class="input-wrap">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <input id="cv-email" type="email" name="email" placeholder="you@email.com" required />
+              </div>
             </div>
           </div>
 
           <div class="field-grid">
             <div class="field">
               <label for="cv-phone">Phone Number <span class="req">*</span></label>
-              <input id="cv-phone" type="tel" name="phone" placeholder="+91 ..." required />
+              <div class="input-wrap">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <input id="cv-phone" type="tel" name="phone" placeholder="+91 ..." required />
+              </div>
             </div>
             <div class="field">
               <label for="cv-location">Current Location <span class="req">*</span></label>
-              <input id="cv-location" type="text" name="location" placeholder="e.g. Mumbai, Maharashtra" required />
+              <div class="input-wrap">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <input id="cv-location" type="text" name="location" placeholder="e.g. Mumbai, Maharashtra" required />
+              </div>
             </div>
           </div>
 
@@ -216,11 +228,16 @@
           <div class="field-grid">
             <div class="field">
               <label for="cv-role">Desired Role / Job Title <span class="req">*</span></label>
-              <input id="cv-role" type="text" name="role" placeholder="e.g. Senior Software Engineer" required />
+              <div class="input-wrap">
+                <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                <input id="cv-role" type="text" name="role" placeholder="e.g. Senior Software Engineer" required />
+              </div>
             </div>
             <div class="field">
               <label for="cv-industry">Industry / Sector</label>
-              <select id="cv-industry" name="industry">
+              <div class="input-wrap input-wrap--select">
+                <i class="fa-solid fa-building" aria-hidden="true"></i>
+                <select id="cv-industry" name="industry">
                 <option value="" disabled selected>Select industry</option>
                 <option>Finance &amp; Banking</option>
                 <option>Information Technology</option>
@@ -231,60 +248,79 @@
                 <option>Sales &amp; Marketing</option>
                 <option>Human Resources</option>
                 <option>Other</option>
-              </select>
+                </select>
+              </div>
             </div>
           </div>
 
           <div class="field-grid">
             <div class="field">
               <label for="cv-experience">Total Experience</label>
-              <select id="cv-experience" name="experience">
-                <option value="" disabled selected>Select experience</option>
-                <option>Fresher (0–1 years)</option>
-                <option>1–3 years</option>
-                <option>3–5 years</option>
-                <option>5–10 years</option>
-                <option>10+ years</option>
-              </select>
+              <div class="input-wrap input-wrap--select">
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                <select id="cv-experience" name="experience">
+                  <option value="" disabled selected>Select experience</option>
+                  <option>Fresher (0–1 years)</option>
+                  <option>1–3 years</option>
+                  <option>3–5 years</option>
+                  <option>5–10 years</option>
+                  <option>10+ years</option>
+                </select>
+              </div>
             </div>
             <div class="field">
               <label for="cv-employment-type">Employment Type</label>
-              <select id="cv-employment-type" name="employment_type">
-                <option value="" disabled selected>Select type</option>
-                <option>Permanent / Full-time</option>
-                <option>Contract</option>
-                <option>Temporary</option>
-                <option>Open to any</option>
-              </select>
+              <div class="input-wrap input-wrap--select">
+                <i class="fa-solid fa-file-contract" aria-hidden="true"></i>
+                <select id="cv-employment-type" name="employment_type">
+                  <option value="" disabled selected>Select type</option>
+                  <option>Permanent / Full-time</option>
+                  <option>Contract</option>
+                  <option>Temporary</option>
+                  <option>Open to any</option>
+                </select>
+              </div>
             </div>
           </div>
 
           <div class="field-grid">
             <div class="field">
               <label for="cv-current-ctc">Current CTC (₹ LPA)</label>
-              <input id="cv-current-ctc" type="text" name="current_ctc" placeholder="e.g. 12 LPA" />
+              <div class="input-wrap">
+                <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i>
+                <input id="cv-current-ctc" type="text" name="current_ctc" placeholder="e.g. 12 LPA" />
+              </div>
             </div>
             <div class="field">
               <label for="cv-expected-ctc">Expected CTC (₹ LPA)</label>
-              <input id="cv-expected-ctc" type="text" name="expected_ctc" placeholder="e.g. 16 LPA" />
+              <div class="input-wrap">
+                <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i>
+                <input id="cv-expected-ctc" type="text" name="expected_ctc" placeholder="e.g. 16 LPA" />
+              </div>
             </div>
           </div>
 
           <div class="field-grid">
             <div class="field">
               <label for="cv-notice-period">Notice Period</label>
-              <select id="cv-notice-period" name="notice_period">
-                <option value="" disabled selected>Select notice period</option>
-                <option>Immediate / Serving notice</option>
-                <option>15 days</option>
-                <option>30 days</option>
-                <option>60 days</option>
-                <option>90 days</option>
-              </select>
+              <div class="input-wrap input-wrap--select">
+                <i class="fa-solid fa-calendar-day" aria-hidden="true"></i>
+                <select id="cv-notice-period" name="notice_period">
+                  <option value="" disabled selected>Select notice period</option>
+                  <option>Immediate / Serving notice</option>
+                  <option>15 days</option>
+                  <option>30 days</option>
+                  <option>60 days</option>
+                  <option>90 days</option>
+                </select>
+              </div>
             </div>
             <div class="field">
               <label for="cv-linkedin">LinkedIn Profile</label>
-              <input id="cv-linkedin" type="url" name="linkedin" placeholder="https://linkedin.com/in/…" />
+              <div class="input-wrap">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                <input id="cv-linkedin" type="url" name="linkedin" placeholder="https://linkedin.com/in/…" />
+              </div>
             </div>
           </div>
 
@@ -303,7 +339,10 @@
           <!-- Cover note -->
           <div class="field">
             <label for="cv-cover-note">Cover Note (optional)</label>
-            <textarea id="cv-cover-note" name="message" placeholder="Anything you'd like us to know, preferred locations, target companies, career goals…"></textarea>
+            <div class="input-wrap input-wrap--textarea">
+              <i class="fa-solid fa-comment" aria-hidden="true"></i>
+              <textarea id="cv-cover-note" name="message" placeholder="Anything you'd like us to know, preferred locations, target companies, career goals…"></textarea>
+            </div>
           </div>
 
           <!-- Consent -->
